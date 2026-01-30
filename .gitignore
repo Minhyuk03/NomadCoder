@@ -1,3 +1,48 @@
-flutter/flutter/
-.vscode/
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js & JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+package-lock.json
+yarn.lock
+
+# React Native
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+.expo/
+.expo-shared/
+
+# Flutter
+flutter/flutter/
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.pub/
+*.iml
+*.lock
+
+# Build outputs
+dist/
+build/
+*.log
