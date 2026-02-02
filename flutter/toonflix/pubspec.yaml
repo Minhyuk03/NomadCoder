@@ -28,9 +28,16 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+<<<<<<< HEAD
   flutter:
     sdk: flutter
     
+=======
+  cached_network_image: ^3.3.1  
+  flutter:
+    sdk: flutter
+      
+>>>>>>> 04b2658 (flutter end)
   http: ^1.6.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
