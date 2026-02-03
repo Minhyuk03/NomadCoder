@@ -30,14 +30,12 @@ export default function App() {
   };
   const loadToDos = async () => {
     const s = await AsyncStorage.getItem(STORAGE_KEY);
-<<<<<<< HEAD
+
     if (s) {
       setToDos(JSON.parse(s));
     }
-=======
-    setToDos(JSON.parse(s));
->>>>>>> 04b2658 (flutter end)
   };
+
   const addToDo = async () => {
     if (text === "") {
       return;
