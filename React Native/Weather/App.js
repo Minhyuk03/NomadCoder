@@ -88,6 +88,7 @@ export default function App() {
                   alignItems: "flex-end",
                   justifyContent: "space-between",
                   width: "100%",
+                  paddingHorizontal:30,
                 }}
               >
                 <Text style={styles.temp}>
@@ -140,9 +141,11 @@ const styles = StyleSheet.create({
     marginTop: -30,
     fontSize: 30,
     color: "white",
+    paddingHorizontal:30,
   },
   tinyText: {
     fontSize: 25,
     color: "white",
+    paddingHorizontal:30,
   },
 });
