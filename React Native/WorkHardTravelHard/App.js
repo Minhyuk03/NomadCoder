@@ -25,14 +25,20 @@ export default function App() {
   const travel = () => setWorking(false);
   const work = () => setWorking(true);
   const onChangeText = (payload) => setText(payload);
+  //로컬에 저장
   const saveToDos = async (toSave) => {
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
   };
   const loadToDos = async () => {
+    //로컬저장소 기억
     const s = await AsyncStorage.getItem(STORAGE_KEY);
-
+    //work/travel 기억
+    const t = await AsyncStorage.getItem();
     if (s) {
       setToDos(JSON.parse(s));
+    }
+    if (t) {
+      setToDos(JSON.parse(t));
     }
   };
 
@@ -41,13 +47,11 @@ export default function App() {
       return;
     }
     const newToDos = { ...toDos, [Date.now()]: { text, working } };
-    // const newToDos = Object.assign({}, toDos, {
-    //   [Date.now()]: { text, work: working },
-    // });
     setToDos(newToDos);
     await saveToDos(newToDos);
     setText("");
   };
+  //todo 수정 함수 만들기
   const deleteToDo = (key) => {
     Alert.alert("Delete To DO", "Are you sure?", [
       { text: "Cancel" },
@@ -100,7 +104,13 @@ export default function App() {
           {Object.keys(toDos).map((key) =>
             toDos[key].working === working ? (
               <View style={styles.toDo} key={key}>
+                <TouchableOpacity onPress={() => deleteToDo(key)}>
+                  <Fontisto name="check" size={16} color={theme.grey} />
+                </TouchableOpacity>
                 <Text style={styles.toDoText}>{toDos[key].text}</Text>
+                <TouchableOpacity onPress={() => deleteToDo(key)}>
+                  <Fontisto name="stop" size={16} color={theme.grey} />
+                </TouchableOpacity>
                 <TouchableOpacity onPress={() => deleteToDo(key)}>
                   <Fontisto name="trash" size={16} color={theme.grey} />
                 </TouchableOpacity>
