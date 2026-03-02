@@ -16,11 +16,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 2,
         backgroundColor: Colors.white,
         foregroundColor: Colors.green,
-<<<<<<< HEAD
-        title: const Text('오늘의 웹툰', style: TextStyle(fontSize: 24)),
-=======
         title: const Text("오늘의 웹툰", style: TextStyle(fontSize: 24)),
->>>>>>> 04b2658 (flutter end)
       ),
       body: FutureBuilder(
         future: webtoons,
@@ -28,20 +24,12 @@ class HomeScreen extends StatelessWidget {
           if (snapshot.hasData) {
             return Column(
               children: [
-<<<<<<< HEAD
-                SizedBox(height: 50),
-=======
                 const SizedBox(height: 50),
->>>>>>> 04b2658 (flutter end)
                 Expanded(child: makeList(snapshot)),
               ],
             );
           }
-<<<<<<< HEAD
-          return Center(child: CircularProgressIndicator());
-=======
           return const Center(child: CircularProgressIndicator());
->>>>>>> 04b2658 (flutter end)
         },
       ),
     );
@@ -51,11 +39,7 @@ class HomeScreen extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: snapshot.data!.length,
-<<<<<<< HEAD
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-=======
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
->>>>>>> 04b2658 (flutter end)
       itemBuilder: (context, index) {
         var webtoon = snapshot.data![index];
         return Webtoon(

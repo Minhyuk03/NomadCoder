@@ -14,24 +14,12 @@ class ApiService {
     List<WebtoonModel> webtoonInstances = [];
     final url = Uri.parse('$baseUrl/$today');
     final response = await http.get(url);
-<<<<<<< HEAD
-
-    if (response.statusCode == 200) {
-      final List<dynamic> webtoons = jsonDecode(response.body);
-      for (var webtoon in webtoons) {
-        final instance = WebtoonModel.fromJson(webtoon);
-
-        webtoonInstances.add(instance);
-      }
-      print(webtoonInstances);
-=======
     if (response.statusCode == 200) {
       final webtoons = jsonDecode(response.body);
       for (var webtoon in webtoons) {
         final instance = WebtoonModel.fromJson(webtoon);
         webtoonInstances.add(instance);
       }
->>>>>>> 04b2658 (flutter end)
       return webtoonInstances;
     }
     throw Error();
